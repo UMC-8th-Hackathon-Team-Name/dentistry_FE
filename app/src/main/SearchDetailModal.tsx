@@ -4,7 +4,15 @@ import LineProgress from "../components/LineProgress";
 import FacilityPath from "../components/main/FacilityPath";
 import Button from "../components/common/Button";
 
-const SearchDetailModal = () => {
+interface SearchDetailModalProps {
+  onClose: () => void;
+  showDetailButton?: boolean;
+}
+
+const SearchDetailModal = ({
+  onClose,
+  showDetailButton = true,
+}: SearchDetailModalProps) => {
   const nav = useNavigate();
   const segments = [
     { lineName: "1", ratio: 3 },
@@ -42,9 +50,11 @@ const SearchDetailModal = () => {
       <div className="mt-[30px] px-[26px] overflow-y-auto max-h-[250px] scrollbar-hide ">
         <FacilityPath />
       </div>
-      <div className="mt-[26px] flex justify-center">
-        <Button text="자세히 보기" />
-      </div>
+      {showDetailButton && (
+        <div className="mt-[26px] flex justify-center">
+          <Button text="자세히 보기" onClick={() => nav("/map")} />
+        </div>
+      )}
     </div>
   );
 };
