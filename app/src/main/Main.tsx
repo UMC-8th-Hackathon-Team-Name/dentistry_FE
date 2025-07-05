@@ -3,19 +3,9 @@ import logo_icon from "/src/assets/dooroodooroo_icon.png";
 import logo_title from "/src/assets/dooroodooroo_title.png";
 import vector from "/src/assets/Vector.svg";
 import arrow from "/src/assets/arrow.svg";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Main = () => {
-  const [start, setStart] = useState("");
-  const [end, setEnd] = useState("");
-  const handleSwap = () => {
-    setStart((prev) => {
-      setEnd(prev);
-      return end;
-    });
-  };
-  const isDisabled = Boolean(start.trim() && end.trim());
   const navigate = useNavigate();
 
   return (
@@ -43,25 +33,21 @@ const Main = () => {
       <div className="mt-[50px] text-[20px] font-[400] text-[#4C4C4C] mx-[23px]">
         가는길 확인하기
       </div>
-      <div className="w-[380px] h-[243px] mx-[16px] px-[16px] mt-[44px]">
+      <div
+        className="w-[380px] h-[243px] mx-[16px] px-[16px] mt-[44px] cursor-pointer"
+        onClick={() => {
+          navigate("/search");
+        }}
+      >
         <div className="flex items-center">
-          <img
-            role="바꾸기 버튼"
-            src={vector}
-            alt="바꾸기"
-            onClick={handleSwap}
-          />
+          <img role="바꾸기 버튼" src={vector} alt="바꾸기" />
           <div className="flex flex-col gap-[8px]">
             <input
-              value={start}
-              onChange={(e) => setStart(e.target.value)}
               type="text"
               placeholder="출발지 입력"
               className="w-[300px] h-[40px] rounded-[22px] mx-[11px] px-[19px] bg-[#F7F7F7] text-[16px] font-[300] text-[#888888]"
             />
             <input
-              value={end}
-              onChange={(e) => setEnd(e.target.value)}
               type="text"
               placeholder="도착지 입력"
               className="w-[300px] h-[40px] rounded-[22px] mx-[11px] px-[19px] bg-[#F7F7F7] text-[16px] font-[300] text-[#888888]"
@@ -69,7 +55,7 @@ const Main = () => {
           </div>
         </div>
         <div className="mt-[28px] flex justify-end mr-[11px]">
-          <Button text="경로 설정하기" disabled={isDisabled} />
+          <Button text="경로 설정하기" disabled={false} />
         </div>
       </div>
       <div
