@@ -112,6 +112,7 @@ const SignupTerms = () => {
                 </div>
                 <a
                   href="https://sincere-rule-09e.notion.site/227d90f0248080488763fa5dd00790db"
+                  target="_blank"
                   className="text-base font-normal text-[#BCBCBC]"
                 >
                   보기
@@ -148,6 +149,7 @@ const SignupTerms = () => {
                 </div>
                 <a
                   href="https://sincere-rule-09e.notion.site/227d90f024808024b1aac7fbfdccb2d9"
+                  target="_blank"
                   className="text-base font-normal text-[#BCBCBC]"
                 >
                   보기

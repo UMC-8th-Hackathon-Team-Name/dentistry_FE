@@ -28,7 +28,7 @@ const LandigPage = () => {
       <div className="absolute flex flex-col gap-5 w-fit bottom-24">
         <LoginButton />
         <Link
-          to="/terms"
+          to="/signup/terms"
           role="약관 동의 페이지로 이동"
           className="w-full text-base font-normal text-center text-white"
           onClick={() => {}}
