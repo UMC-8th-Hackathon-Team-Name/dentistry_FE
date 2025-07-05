@@ -18,7 +18,7 @@ import FixPage from "./pages/FixPage";
 
 function App() {
   return (
-    <div className="m-auto max-h-[912px] max-w-[412px] bg-[#FBFBFB] border-2 border-black">
+    <div className="m-auto h-[912px] max-w-[412px] bg-[#FBFBFB] border-2 border-black">
       <BrowserRouter>
         <Routes>
           {/* 인증/회원가입 관련 */}
