@@ -28,7 +28,7 @@ const SignupPassword = () => {
     const isAuthorized = mockData.some((item) => item.pass === password);
 
     if (isPasswordValid && isMatch && isAuthorized) {
-      nav("/signup/email"); // 다음 단계로 이동
+      nav("/signup/complete"); // 다음 단계로 이동
     }
   };
 
@@ -41,7 +41,7 @@ const SignupPassword = () => {
           alt="closeButton"
           className="absolute w-6 h-6 cursor-pointer top-6 left-6"
           onClick={() => {
-            nav("/");
+            nav("/signup/complete");
           }}
         />
       </div>

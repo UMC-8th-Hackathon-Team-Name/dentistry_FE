@@ -5,6 +5,7 @@ import Terms from "./auth/Terms";
 import Main from "./main/Main";
 import SignupEmail from "./auth/SignupEmail";
 import SignupPassword from "./auth/SignupPassword";
+import SignupComplete from "./auth/SignupComplete";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/main" element={<Main />} />
           <Route path="/signup/email" element={<SignupEmail />} />
           <Route path="/signup/password" element={<SignupPassword />} />
+          <Route path="/signup/complete" element={<SignupComplete />} />
         </Routes>
       </div>
     </BrowserRouter>
