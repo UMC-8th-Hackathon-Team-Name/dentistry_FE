@@ -35,7 +35,7 @@ const DeleteAccount = () => {
   };
 
   return (
-    <div className="relative flex flex-col items-center justify-end w-full h-screen overflow-hidden">
+    <div className="relative flex flex-col items-center justify-end w-full h-full overflow-hidden">
       {/* 메인 콘텐츠 (모달 열릴 때 blur 효과) */}
       <div
         className={`flex flex-col items-center justify-end w-full h-full transition-all duration-300 ${
