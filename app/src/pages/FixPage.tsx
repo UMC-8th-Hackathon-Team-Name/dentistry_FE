@@ -36,7 +36,7 @@ const FixPage = () => {
     "경사로",
   ];
   return (
-    <div className="min-h-screen bg-[#FBFBFB]">
+    <div className="h-full bg-[#FBFBFB] scroll-smooth overflow-y-scroll overflow-x-hidden [&::-webkit-scrollbar]:hidden">
       <div>
         <img
           src="/back.png"
@@ -54,7 +54,7 @@ const FixPage = () => {
         </p>
       </div>
 
-      <div className="w-[380px] h-[708px] mt-[33px] ml-[16px] pt-[26px] bg-white rounded-t-[19px]">
+      <div className="w-[380px] h-full mt-[33px] ml-[16px] pt-[26px] bg-white rounded-t-[19px]">
         <p className="text-[20px] font-[400] ml-[24px] text-[#4C4C4C]">
           주 이동장치
         </p>
@@ -115,7 +115,7 @@ const FixPage = () => {
         <button
           disabled={!isAnySelected}
           onClick={() => navigate("/setting", { state: selected })}
-          className={`mt-[50px] ml-[25px] w-[325px] h-[52px] rounded-[10px] ${
+          className={`mt-[50px] mb-12 ml-[25px] w-[325px] h-[52px] rounded-[10px] ${
             isAnySelected
               ? "bg-[#465785] text-white"
               : "bg-[#BCBCBC] text-white "

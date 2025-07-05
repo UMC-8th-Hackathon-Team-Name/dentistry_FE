@@ -36,7 +36,7 @@ const DetailPage = () => {
     "경사로",
   ];
   return (
-    <div className="min-h-screen bg-[#FBFBFB]">
+    <div className="h-full bg-[#FBFBFB] smooth scroll-smooth overflow-y-hidden overflow-x-hidden  [&::-webkit-scrollbar]:hidden">
       <div>
         <img
           src="/back.png"
@@ -51,7 +51,7 @@ const DetailPage = () => {
           필요한 서비스를 선택해 주세요
         </p>
       </div>
-      <div className="w-[380px] h-[708px] mt-[33px] ml-[16px] pt-[26px] bg-white rounded-t-[19px]">
+      <div className="w-[380px] h-full mt-[33px] ml-[16px] pt-[26px] bg-white rounded-t-[19px]">
         <p className="text-[20px] font-[400] ml-[24px] text-[#4C4C4C]">
           주 이동장치
         </p>
@@ -83,7 +83,7 @@ const DetailPage = () => {
         <p className="text-[20px] font-[400] ml-[24px] mt-[50px] text-[#4C4C4C]">
           보조 이동 소통 설비
         </p>
-        <div className="flex flex-wrap  gap-[3px] ml-[10px] ">
+        <div className="flex flex-wrap  gap-1 ml-[10px] ">
           {service2.map((label) => (
             <button
               key={label}
@@ -112,7 +112,7 @@ const DetailPage = () => {
         <button
           disabled={!isAnySelected}
           onClick={() => navigate("/setting", { state: selected })}
-          className={`mt-[50px] ml-[25px] w-[325px] h-[52px] rounded-[10px] ${
+          className={`mt-[70px] mb-12 ml-[25px] w-[325px] h-[52px] rounded-[10px] ${
             isAnySelected
               ? "bg-[#465785] text-white"
               : "bg-[#BCBCBC] text-white "
