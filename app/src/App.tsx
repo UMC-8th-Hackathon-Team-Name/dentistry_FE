@@ -1,12 +1,16 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import LandigPage from "./auth/LandingPage";
 
 function App() {
   return (
-    <>
-      <div className="flex items-center justify-center w-screen h-screen text-5xl font-bold bg-amber-300">
-        Dentist!
+    <BrowserRouter>
+      <div className="m-auto min-h-screen max-w-[412px] border-2 border-black">
+        <Routes>
+          <Route path="/" element={<LandigPage />} />
+        </Routes>
       </div>
-    </>
+    </BrowserRouter>
   );
 }
 
