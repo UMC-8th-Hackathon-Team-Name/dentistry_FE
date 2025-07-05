@@ -59,7 +59,7 @@ const Login = () => {
       {/* Container */}
       <div className="w-96 h-[630px] bg-white rounded-2xl flex flex-col justify-between items-center pt-12 pb-20 px-7 shadow-[0_-2px_15px_rgba(0,0,0,0.1)]">
         <div className="flex flex-col gap-8">
-          {/* 비밀번호 입력 */}
+          {/* 이메일 입력 */}
           <input
             type="email"
             value={email}
