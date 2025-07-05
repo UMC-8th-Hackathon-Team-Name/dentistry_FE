@@ -39,7 +39,7 @@ const Login = () => {
 
   return (
     <main
-      className="relative flex flex-col items-center justify-end w-full h-screen gap-4"
+      className="relative flex flex-col items-center justify-end w-full h-full gap-4"
       role="로그인 페이지"
     >
       {/* 닫기 버튼 */}
