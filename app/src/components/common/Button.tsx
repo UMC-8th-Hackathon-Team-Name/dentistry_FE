@@ -4,6 +4,7 @@ interface buttonProps {
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
   className?: string;
+  role?: string;
 }
 
 const Button = ({
@@ -12,10 +13,11 @@ const Button = ({
   type = "button",
   disabled,
   className,
+  role = "버튼",
 }: buttonProps) => {
   return (
     <button
-      role="버튼"
+      role={role}
       type={type}
       onClick={onClick}
       disabled={disabled}
