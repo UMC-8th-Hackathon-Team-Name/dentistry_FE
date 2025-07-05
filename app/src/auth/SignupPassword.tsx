@@ -36,7 +36,7 @@ const SignupPassword = () => {
   };
 
   return (
-    <div className="relative flex flex-col items-center justify-end w-full h-screen gap-4">
+    <div className="relative flex flex-col items-center justify-end w-full h-full gap-4">
       {/* 닫기 버튼 */}
       <div>
         <img
