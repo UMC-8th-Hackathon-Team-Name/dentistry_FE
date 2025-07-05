@@ -4,6 +4,8 @@ import logo_title from "/src/assets/dooroodooroo_title.png";
 import vector from "/src/assets/Vector.svg";
 import arrow from "/src/assets/arrow.svg";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 const Main = () => {
   const [start, setStart] = useState("");
   const [end, setEnd] = useState("");
@@ -13,6 +15,8 @@ const Main = () => {
       return end;
     });
   };
+  const isDisabled = Boolean(start.trim() && end.trim());
+  const navigate = useNavigate();
 
   return (
     <div className="flex flex-col">
@@ -65,10 +69,15 @@ const Main = () => {
           </div>
         </div>
         <div className="mt-[28px] flex justify-end mr-[11px]">
-          <Button text="경로 설정하기" />
+          <Button text="경로 설정하기" disabled={isDisabled} />
         </div>
       </div>
-      <div className="flex justify-between mx-[16px] items-center w-[380px] h-[55px] rounded-[19px] border border-black px-[27px] bg-[#FFFFFF] ">
+      <div
+        className="flex justify-between mx-[16px] items-center w-[380px] h-[55px] rounded-[19px] px-[27px] bg-[#FFFFFF] cursor-pointer"
+        onClick={() => {
+          navigate("/setting");
+        }}
+      >
         <span className="text-[20px]">설정</span>
         <img src={arrow} alt="화살표" />
       </div>
