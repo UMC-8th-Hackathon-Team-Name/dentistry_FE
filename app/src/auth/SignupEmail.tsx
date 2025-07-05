@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Button from "../components/common/Button";
+
 import closeIcon from "/src/assets/close_icon.png";
+
+import Button from "../components/common/Button";
+import ProgressBar from "../components/common/ProgressBar";
 
 const mockData = [
   {
@@ -39,15 +42,16 @@ const SignupEmail = () => {
         />
       </div>
 
-      {/* 약관  */}
-      <div className="flex flex-col w-full gap-2 px-10">
+      <ProgressBar currentStep={1} totalSteps={3} />
+
+      <div className="flex flex-col w-full gap-4 px-10">
         <div className="text-2xl font-semibold text-[#4C4C4C]">회원 가입</div>
-        <div className="text-base font-normal text-[#4C4C4C]">
+        <div className="text-base font-normal text-[#4C4C4C] mb-3">
           로그인에 사용할 아이디를 입력해 주세요
         </div>
       </div>
 
-      {/* 약관 동의 Container */}
+      {/* Container */}
       <div className="w-96 h-[630px] bg-white rounded-2xl flex flex-col justify-between items-center pt-12 pb-20 px-7 shadow-[0_-2px_15px_rgba(0,0,0,0.1)]">
         <div className="flex flex-col gap-8">
           {/* 이메일 입력 */}
