@@ -49,7 +49,7 @@ const Search = () => {
           src={closeIcon}
           alt="closeButton"
           className="absolute cursor-pointer top-[20px] left-[24px]"
-          onClick={() => nav("/")}
+          onClick={() => nav("/main")}
         />
       </div>
 

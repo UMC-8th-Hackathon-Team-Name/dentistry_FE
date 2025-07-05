@@ -37,15 +37,9 @@ const SearchDetailModal = ({
         />
       </div>
       <div className="flex gap-3 items-center justify-center mt-[32px] px-[26px]">
-<<<<<<< HEAD
-        <span className="text-[#4C4C4C] text-[24px] font-[500]">9호선</span>
+        <span className="text-[#4C4C4C] text-[20px] font-[500]">9호선</span>
         <div className="w-[150px] h-[0.75px] bg-[#D1D1D1]"></div>
-        <span className="text-[#4C4C4C] text-[24px] font-[500]">우이신설</span>
-=======
-        <span className="text-[#4C4C4C] text-[20px] font-[500]">출발호선</span>
-        <div className="w-[150px] h-[0.75px] bg-[#D1D1D1]"></div>
-        <span className="text-[#4C4C4C] text-[20px] font-[500]">도착호선</span>
->>>>>>> 1cdb3c74c49a5ce4aac4a89e1a210eb6b0733963
+        <span className="text-[#4C4C4C] text-[20px] font-[500]">우이신설</span>
       </div>
       <div className="mt-[50px] mx-[26px]">
         <LineProgress segments={segments} />

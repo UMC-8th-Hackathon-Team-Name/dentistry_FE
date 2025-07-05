@@ -1,9 +1,7 @@
-/* FacilityPath.tsx */
 import { FACILITIES } from "../../constants/facilities";
 import { lineStyleMap } from "../../constants/lineStyleMap";
 import FacilityBox from "../FacilityBox";
 
-/* ① 역 이름(stationName) 추가 */
 const routeData = [
   {
     line: "9",
@@ -11,28 +9,20 @@ const routeData = [
     facilities: [
       "horizontalWalker",
       "elevator",
-      "horizontalWalker",
-      "elevator",
-      "horizontalWalker",
-      "elevator",
+      "wheelchairCharger",
+      "voiceGuide",
+      "slope",
     ],
   },
   {
     line: "4",
     stationName: "동작역",
-    facilities: [
-      "slope",
-      "horizontalWalker",
-      "voiceGuide",
-      "horizontalWalker",
-      "elevator",
-      "wheelchairCharger",
-    ],
+    facilities: ["slope", "horizontalWalker", "elevator", "wheelchairCharger"],
   },
   {
     line: "우이신설",
     stationName: "정릉역",
-    facilities: ["escalator"],
+    facilities: ["elevator"],
   },
 ];
 
@@ -47,7 +37,6 @@ const FacilityPath = () => (
 
         return (
           <div key={item.stationName} className="flex">
-            {/* ─── 왼쪽: 노선 원 ─── */}
             <div className="flex justify-center w-8 mr-4">
               <div
                 className="flex items-center justify-center w-6 h-6 font-bold text-white rounded-full"
@@ -60,15 +49,11 @@ const FacilityPath = () => (
               </div>
             </div>
 
-            {/* ─── 오른쪽: 역 이름 + 시설 ─── */}
             <div className="flex-1">
-              {/* ② 역 이름 표시 */}
               <div className="mb-2 text-[#4C4C4C] font-semibold">
                 {item.stationName}
               </div>
-
-              {/* 시설 4칸 그리드 */}
-              <div className="grid grid-cols-4 gap-3">
+              <div className="grid grid-cols-3 gap-1">
                 {item.facilities.map((fid, idx) => (
                   <FacilityBox
                     key={`${fid}-${idx}`}

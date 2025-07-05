@@ -25,7 +25,7 @@ const MapPage = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-full overflow-y-hidden ">
+    <div className="relative w-full h-full overflow-hidden ">
       {" "}
       <div id="map" className="w-full h-[900px] " />
       <div className="absolute flex justify-between top-8 left-8 z-10 w-[350px] h-[50px] bg-white rounded-[50px] shadow-md">
@@ -47,11 +47,8 @@ const MapPage = () => {
         </span>
       </div>
       {showModal && (
-        <div className="absolute bottom-0 left-0 w-full z-20">
-          <SearchDetailModal
-            onClose={() => setShowModal(false)}
-            showDetailButton={false}
-          />
+        <div className="absolute left-4 bottom-0 w-full z-20">
+          <SearchDetailModal showDetailButton={false} />
         </div>
       )}
     </div>

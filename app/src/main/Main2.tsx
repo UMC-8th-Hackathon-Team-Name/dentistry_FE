@@ -27,13 +27,13 @@ const Main2 = () => {
         />
       </div>
       <div className="text-[24px] text-[#4C4C4C] mt-[22px] mx-[23px]">
-        (아이디)님 안녕하세요!
+        두루루님 안녕하세요!
       </div>
       <div className="text-[16px] text-[#4C4C4C] mt-[11px] mx-[27px]">
         어디로 안내해드릴까요?
       </div>
       <div className="mt-[35px] text-[20px] font-[400] text-[#4C4C4C] mx-[23px]">
-        가는길 확인하기
+        경로 확인하기
       </div>
       <SearchDetail />
       <div
