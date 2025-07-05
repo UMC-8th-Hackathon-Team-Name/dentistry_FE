@@ -7,6 +7,7 @@ import Main from "./main/Main";
 import SignupEmail from "./auth/SignupEmail";
 import SignupPassword from "./auth/SignupPassword";
 import SignupComplete from "./auth/SignupComplete";
+import Login from "./auth/Login";
 
 import DetailPage from "./pages/DetailPage";
 import SettingPage from "./pages/SettingPage";
@@ -23,6 +24,7 @@ function App() {
           <Route path="/signup/email" element={<SignupEmail />} />
           <Route path="/signup/password" element={<SignupPassword />} />
           <Route path="/signup/complete" element={<SignupComplete />} />
+          <Route path="/login" element={<Login />} />
 
           <Route path="/" element={<DetailPage />} />
           <Route path="/setting" element={<SettingPage />} />
