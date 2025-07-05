@@ -1,8 +1,9 @@
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link, useNavigate } from "react-router-dom";
 
 const SettingPage = () => {
   const location = useLocation();
   const selectedItems = location.state as string[];
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-[#FBFBFB]">
@@ -11,6 +12,7 @@ const SettingPage = () => {
           src="/Vector.png"
           alt="로고"
           className="w-[25px] h-[25px] mt-[28px] ml-[24px]"
+          onClick={() => navigate(-1)}
         />
         <p className="text-[24px] font-[600] mt-[99px] ml-[35px] text-[#4C4C4C]">
           설정
@@ -21,7 +23,10 @@ const SettingPage = () => {
           (아이디)님의 등록 배려시설
         </p>
 
-        <Link to="/" className="text-[14px] text-[#BCBCBC] mt-[40px] mr-[30px]">
+        <Link
+          to="/fix"
+          className="text-[14px] text-[#BCBCBC] mt-[40px] mr-[30px]"
+        >
           수정
         </Link>
       </div>
@@ -31,7 +36,7 @@ const SettingPage = () => {
             selectedItems.map((item, idx) => (
               <div
                 key={idx}
-                className="w-[80px] h-[80px] bg-[#F2F2F2] rounded-[15px] flex items-center justify-center text-[13px] text-[#4C4C4C] text-center break-keep whitespace-normal"
+                className="w-[80px] h-[80px] bg-[#E0E6F3] rounded-[15px] flex items-center justify-center text-[13px] text-[#4C4C4C] text-center break-keep whitespace-normal"
               >
                 {item}
               </div>
@@ -73,7 +78,10 @@ const SettingPage = () => {
       <button className="mt-[60px] ml-[40px] w-[325px] h-[52px] rounded-[10px] bg-[#465785] text-white ">
         로그아웃
       </button>
-      <button className="mt-[10px] ml-[40px] w-[325px] h-[52px] rounded-[10px] bg-[#BCBCBC] text-white">
+      <button
+        onClick={() => navigate("/delete-account")}
+        className="mt-[10px] ml-[40px] w-[325px] h-[52px] rounded-[10px] bg-[#BCBCBC] text-white"
+      >
         회원 탈퇴
       </button>
     </div>
