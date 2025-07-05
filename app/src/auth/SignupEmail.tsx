@@ -60,6 +60,7 @@ const SignupEmail = () => {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            maxLength={20}
             placeholder="이메일을 입력해주세요"
             className="w-[325px] h-14 bg-[#FBFBFB] rounded-2xl px-5"
           />
