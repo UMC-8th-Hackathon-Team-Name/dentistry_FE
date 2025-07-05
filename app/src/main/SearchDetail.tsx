@@ -3,6 +3,7 @@ import closeIcon from "/src/assets/close_icon.png";
 import LineProgress from "../components/LineProgress";
 import FacilityPath from "../components/main/FacilityPath";
 import Button from "../components/common/Button";
+import Button2 from "../components/common/Button2";
 
 const SearchDetailModal = () => {
   const nav = useNavigate();
@@ -21,16 +22,7 @@ const SearchDetailModal = () => {
     "휠체어 리프트",
   ];
   return (
-    <div className="h-[579px] rounded-[19px] bg-[#FFFFFF] flex flex-col">
-      <div className="flex h-[84px] justify-between items-center border-b border-[#F2F2F2]">
-        <span className="text-[24px] text-[#4C4C4C] mx-[30px]">검색 결과</span>
-        <img
-          onClick={() => nav("/main2")}
-          src={closeIcon}
-          alt="닫기 버튼"
-          className="h-[20px] w-[20px] mr-[30px]"
-        />
-      </div>
+    <div className="h-[490px] rounded-[19px] bg-[#FFFFFF] flex flex-col">
       <div className="flex gap-3 items-center justify-center mt-[32px] px-[26px]">
         <span className="text-[#4C4C4C] text-[24px] font-[500]">출발호선</span>
         <div className="w-[150px] h-[0.75px] bg-[#D1D1D1]"></div>
@@ -42,8 +34,9 @@ const SearchDetailModal = () => {
       <div className="mt-[30px] px-[26px] overflow-y-auto max-h-[250px] scrollbar-hide ">
         <FacilityPath />
       </div>
-      <div className="mt-[26px] flex justify-center">
-        <Button text="자세히 보기" />
+      <div className="mt-[26px] flex gap-[7px] justify-center">
+        <Button2 text="삭제 " onClick={() => nav("/main")} disabled={true} />
+        <Button2 text="도착" onClick={() => nav("/main")} />
       </div>
     </div>
   );

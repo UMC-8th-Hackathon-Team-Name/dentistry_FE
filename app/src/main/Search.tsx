@@ -72,7 +72,7 @@ const Search = () => {
 
       {modalOpen && (
         <div className="fixed inset-0 bg-black/30 z-50 flex items-center justify-center">
-          <SearchDetailModal onClose={() => setModalOpen(false)} />
+          <SearchDetailModal />
         </div>
       )}
     </div>
