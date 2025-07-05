@@ -17,8 +17,8 @@ export default function ProgressBar({
         {Array.from({ length: totalSteps }).map((_, index) => (
           <div
             key={index}
-            className={`flex-1 h-[2px]  bg-[] ${
-              index < currentStep ? "bg-[#465785]" : "bg-[#D1D1D1]"
+            className={`flex-1 h-[2px] ${
+              index + 1 === currentStep ? "bg-[#465785]" : "bg-[#D1D1D1]"
             }`}
           />
         ))}
