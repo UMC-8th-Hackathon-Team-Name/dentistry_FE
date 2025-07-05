@@ -16,16 +16,21 @@ const SignupEmail = () => {
   const nav = useNavigate();
   const [email, setEmail] = useState("");
   const [isValid, setIsValid] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const onEmailCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const input = e.target.value;
-    setEmail(input);
+  const onClickNext = () => {
+    setIsSubmitted(true);
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const isFormatValid = emailRegex.test(input);
-    const isDuplicate = mockData.some((item) => item.email === input);
+    const isFormatValid = emailRegex.test(email);
+    const isDuplicate = mockData.some((item) => item.email === email);
 
-    setIsValid(isFormatValid && isDuplicate);
+    const valid = isFormatValid && isDuplicate;
+    setIsValid(valid);
+
+    if (valid) {
+      nav("/signup/password");
+    }
   };
 
   return (
@@ -58,20 +63,18 @@ const SignupEmail = () => {
           <input
             type="email"
             value={email}
-            onChange={onEmailCheck}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="이메일을 입력해주세요"
             className="w-[325px] h-14 bg-[#FBFBFB] rounded-2xl px-5"
           />
           <Button
-            disabled={!isValid}
+            disabled={email === ""}
             text={"다음"}
             type={"button"}
-            onClick={() => {
-              nav("/signup/password");
-            }}
+            onClick={onClickNext}
           />
 
-          {email.length > 0 && !isValid && (
+          {isSubmitted && email.length > 0 && !isValid && (
             <div className="px-2 -mt-4 text-sm font-bold text-red-600">
               유효하지 않은 이메일이거나 이미 사용 중입니다.
             </div>
