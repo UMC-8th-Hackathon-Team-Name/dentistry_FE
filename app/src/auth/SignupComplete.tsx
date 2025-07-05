@@ -36,10 +36,10 @@ const SignupComplete = () => {
       {/* Container */}
       <div className="w-96 h-[630px] flex flex-col justify-end items-center pt-12 pb-20 px-7">
         <Button
-          text={"세부정보 입력하러 가기"}
+          text={"로그인 하기"}
           type={"button"}
           onClick={() => {
-            nav("/");
+            nav("/login");
           }}
         />
       </div>

@@ -26,7 +26,6 @@ const LandigPage = () => {
         </span>
       </div>
       <div className="absolute flex flex-col gap-5 w-fit bottom-24">
-        {/* 추후 버튼 컴포넌트로 교체 */}
         <LoginButton />
         <Link
           to="/terms"

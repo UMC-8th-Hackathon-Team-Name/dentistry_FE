@@ -4,7 +4,7 @@ import Button from "../components/common/Button";
 import closeIcon from "/src/assets/close_icon.png";
 import checkIcon from "/src/assets/check_icon.png";
 
-const Terms = () => {
+const SignupTerms = () => {
   const nav = useNavigate();
   const [isFullChecked, setIsFullChecked] = useState(false);
   const [isServiceChecked, setIsServiceChecked] = useState(false);
@@ -169,4 +169,4 @@ const Terms = () => {
   );
 };
 
-export default Terms;
+export default SignupTerms;
