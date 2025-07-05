@@ -12,7 +12,7 @@ export default function ProgressBar({
   cancelButtonText = "그만하기",
 }: ProgressBarProps) {
   return (
-    <div className="flex flex-col w-full px-5">
+    <div className="flex flex-col w-full px-8">
       <div className="flex pt-4 pb-3">
         {Array.from({ length: totalSteps }).map((_, index) => (
           <div
