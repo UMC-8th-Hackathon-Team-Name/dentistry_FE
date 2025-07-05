@@ -7,7 +7,7 @@ function App() {
     <BrowserRouter>
       <div className="m-auto min-h-screen max-w-[412px] border-2 border-black">
         <Routes>
-          <Route path="/landingpage" element={<LandigPage />} />
+          <Route path="/" element={<LandigPage />} />
         </Routes>
       </div>
     </BrowserRouter>
