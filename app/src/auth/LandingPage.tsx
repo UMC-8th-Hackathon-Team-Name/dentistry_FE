@@ -5,8 +5,8 @@ import LoginButton from "../components/LoginButton";
 
 const LandigPage = () => {
   return (
-    <div className="flex flex-col justify-center items-center bg-[#465785] h-screen w-full relative">
-      <div className="flex flex-col items-center gap-4">
+    <div className="flex flex-col pt-64 justify-between items-center bg-[#465785] h-screen w-full relative">
+      <div className="flex flex-col items-center gap-6">
         <img
           src={logo_icon}
           width={60}
@@ -21,11 +21,11 @@ const LandigPage = () => {
           role="로고제목"
           alt="로고제목"
         />
-        <span className="text-white" role="">
+        <span className="-mt-3 text-white" role="">
           ~한 플랫폼 두루두루
         </span>
       </div>
-      <div className="absolute flex flex-col gap-5 w-fit bottom-20">
+      <div className="absolute flex flex-col gap-5 w-fit bottom-24">
         {/* 추후 버튼 컴포넌트로 교체 */}
         <LoginButton />
         <Link

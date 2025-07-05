@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Button from "../components/common/Button";
 import closeIcon from "/src/assets/close_icon.png";
 import checkIcon from "/src/assets/check_icon.png";
