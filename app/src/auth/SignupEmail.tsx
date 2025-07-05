@@ -44,7 +44,7 @@ const SignupEmail = () => {
 
       <ProgressBar currentStep={1} totalSteps={3} />
 
-      <div className="flex flex-col w-full gap-4 px-10">
+      <div className="flex flex-col w-full gap-4 px-8">
         <div className="text-2xl font-semibold text-[#4C4C4C]">회원 가입</div>
         <div className="text-base font-normal text-[#4C4C4C] mb-3">
           로그인에 사용할 아이디를 입력해 주세요

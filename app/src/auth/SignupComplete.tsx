@@ -24,7 +24,7 @@ const SignupComplete = () => {
 
       <ProgressBar currentStep={3} totalSteps={3} />
 
-      <div className="flex flex-col w-full gap-4 px-10">
+      <div className="flex flex-col w-full gap-4 px-8">
         <div className="text-2xl font-semibold text-[#4C4C4C]">
           회원 가입이 완료되었습니다!
         </div>
