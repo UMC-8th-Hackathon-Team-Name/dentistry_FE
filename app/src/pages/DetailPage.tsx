@@ -69,9 +69,12 @@ const DetailPage = () => {
               />
 
               {selected.includes(label) && (
-                <div className="absolute top-0 left-0 w-full h-full bg-black opacity-40"></div>
+                <div className="absolute top-0 left-0 w-full h-full bg-[#465785]  opacity-70"></div>
               )}
-              <span className="relative z-10 font-[400] text-[13px] text-center break-keep whitespace-normal">
+              <span
+                className={`relative z-10 font-[400] text-[13px] text-center break-keep whitespace-normal
+              ${selected.includes(label) ? "text-[#FFFFFF]" : "text-black"}`}
+              >
                 {label}
               </span>
             </button>
@@ -94,10 +97,13 @@ const DetailPage = () => {
               />
 
               {selected.includes(label) && (
-                <div className="absolute top-0 left-0 w-full h-full bg-black opacity-40"></div>
+                <div className="absolute top-0 left-0 w-full h-full bg-[#465785] opacity-70"></div>
               )}
 
-              <span className=" relative z-10 font-[400]  text-[13px] text-center break-keep whitespace-normal">
+              <span
+                className={`relative z-10 font-[400] text-[13px] text-center break-keep whitespace-normal
+              ${selected.includes(label) ? "text-[#FFFFFF]" : "text-black"}`}
+              >
                 {label}
               </span>
             </button>
