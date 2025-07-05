@@ -28,7 +28,7 @@ const LandigPage = () => {
         </span>
       </div>
       <div className="absolute flex flex-col gap-5 w-fit bottom-24">
-        <LoginButton onClick={() => nav("/delete-account")} />
+        <LoginButton onClick={() => nav("/login")} />
         <Link
           to="/signup/terms"
           role="약관 동의 페이지로 이동"
