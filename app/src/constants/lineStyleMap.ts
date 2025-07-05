@@ -10,5 +10,5 @@ export const lineStyleMap: Record<string, { color: string; textSize: string }> =
     경의중앙: { color: "#63C3B3", textSize: "7px" },
     경춘선: { color: "#128B72", textSize: "7px" },
     수인분당: { color: "#EEC86C", textSize: "7px" },
-    신분당: { color: "#D24958", textSize: "7px" },
+    우이신설: { color: "#D24958", textSize: "5px" },
   };

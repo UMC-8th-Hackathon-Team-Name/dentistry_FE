@@ -11,6 +11,9 @@ const Search = () => {
   const [end, setEnd] = useState("");
   const [modalOpen, setModalOpen] = useState(false);
 
+  const [resultTitle, setResultTitle] = useState("");
+  const [resultAddress, setResultAddress] = useState("");
+
   const handleSwap = () => {
     setStart((prev) => {
       setEnd(prev);
@@ -18,10 +21,26 @@ const Search = () => {
     });
   };
 
-  const dummyResults = Array.from({ length: 10 }, (_, i) => ({
-    title: `검색결과 장소`,
-    address: `세부 주소 ${i + 1}`,
-  }));
+  const handleStartKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter" && start.trim()) {
+      setResultTitle(start.trim());
+    }
+  };
+
+  const handleEndKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter" && end.trim()) {
+      setResultAddress(end.trim());
+    }
+  };
+
+  const dummyResults = resultTitle
+    ? [
+        {
+          title: resultTitle,
+          address: resultAddress || undefined,
+        },
+      ]
+    : [];
 
   return (
     <div className="relative flex flex-col items-center w-full h-screen gap-4">
@@ -45,6 +64,7 @@ const Search = () => {
           <input
             value={start}
             onChange={(e) => setStart(e.target.value)}
+            onKeyDown={handleStartKeyDown}
             type="text"
             placeholder="출발지 입력"
             className="w-[300px] h-[40px] rounded-[22px] mx-[11px] px-[19px] bg-[#F7F7F7] text-[16px] font-[300] text-[#888888]"
@@ -52,6 +72,7 @@ const Search = () => {
           <input
             value={end}
             onChange={(e) => setEnd(e.target.value)}
+            onKeyDown={handleEndKeyDown}
             type="text"
             placeholder="도착지 입력"
             className="w-[300px] h-[40px] rounded-[22px] mx-[11px] px-[19px] bg-[#F7F7F7] text-[16px] font-[300] text-[#888888]"
@@ -65,7 +86,9 @@ const Search = () => {
             key={idx}
             title={item.title}
             address={item.address}
-            onClick={() => setModalOpen(true)}
+            onClick={() => {
+              if (resultTitle && resultAddress) setModalOpen(true);
+            }}
           />
         ))}
       </div>

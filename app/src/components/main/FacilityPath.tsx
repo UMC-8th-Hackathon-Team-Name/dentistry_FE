@@ -6,8 +6,8 @@ import FacilityBox from "../FacilityBox";
 /* ① 역 이름(stationName) 추가 */
 const routeData = [
   {
-    line: "1",
-    stationName: "창동역",
+    line: "9",
+    stationName: "신반포",
     facilities: [
       "horizontalWalker",
       "elevator",
@@ -19,7 +19,7 @@ const routeData = [
   },
   {
     line: "4",
-    stationName: "금정역",
+    stationName: "동작역",
     facilities: [
       "slope",
       "horizontalWalker",
@@ -30,8 +30,8 @@ const routeData = [
     ],
   },
   {
-    line: "인천1",
-    stationName: "안산역",
+    line: "우이신설",
+    stationName: "정릉역",
     facilities: ["escalator"],
   },
 ];
