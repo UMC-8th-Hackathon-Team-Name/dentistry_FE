@@ -12,7 +12,7 @@ const SettingPage = () => {
           src="/Vector.png"
           alt="로고"
           className="w-[25px] h-[25px] mt-[28px] ml-[24px]"
-          onClick={() => navigate(-1)}
+          onClick={() => navigate("/main")}
         />
         <p className="text-[24px] font-[600] mt-[99px] ml-[35px] text-[#4C4C4C]">
           설정
@@ -20,7 +20,7 @@ const SettingPage = () => {
       </div>
       <div className="flex justify-between items-center mb-[20px]">
         <p className="text-[20px] font-[400] mt-[40px] ml-[35px] text-[#4C4C4C]">
-          (아이디)님의 등록 배려시설
+          (두루두루)님의 등록 배려시설
         </p>
 
         <Link
@@ -75,7 +75,10 @@ const SettingPage = () => {
           </a>
         </div>
       </div>
-      <button className="mt-[20px] ml-[40px] w-[325px] h-[52px] rounded-[10px] bg-[#465785] text-white ">
+      <button
+        onClick={() => navigate("/")}
+        className="mt-[20px] ml-[40px] w-[325px] h-[52px] rounded-[10px] bg-[#465785] text-white "
+      >
         로그아웃
       </button>
       <button
