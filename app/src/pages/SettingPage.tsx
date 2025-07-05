@@ -6,7 +6,7 @@ const SettingPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-[#FBFBFB]">
+    <div className="h-full bg-[#FBFBFB] scroll-smooth overflow-y-scroll overflow-x-hidden">
       <div>
         <img
           src="/Vector.png"
@@ -75,12 +75,12 @@ const SettingPage = () => {
           </a>
         </div>
       </div>
-      <button className="mt-[60px] ml-[40px] w-[325px] h-[52px] rounded-[10px] bg-[#465785] text-white ">
+      <button className="mt-[20px] ml-[40px] w-[325px] h-[52px] rounded-[10px] bg-[#465785] text-white ">
         로그아웃
       </button>
       <button
         onClick={() => navigate("/delete-account")}
-        className="mt-[10px] ml-[40px] w-[325px] h-[52px] rounded-[10px] bg-[#BCBCBC] text-white"
+        className="mt-[10px] mb-10 ml-[40px] w-[325px] h-[52px] rounded-[10px] bg-[#BCBCBC] text-white"
       >
         회원 탈퇴
       </button>
