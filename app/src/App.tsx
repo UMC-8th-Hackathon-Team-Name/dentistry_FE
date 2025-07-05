@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+<<<<<<< HEAD
 
 // auth
 import LandingPage from "./auth/LandingPage";
@@ -21,16 +22,22 @@ import DetailPage from "./pages/DetailPage";
 import SettingPage from "./pages/SettingPage";
 import FixPage from "./pages/FixPage";
 =======
+=======
+import LandigPage from "./auth/LandingPage";
+import SignupTerms from "./auth/SignupTerms";
+>>>>>>> f57fc2e (feat:search페이지 구현)
 import Search from "./main/Search";
-import SearchDetailModal from "./main/SearchDetailModal";
-import LineProgressProps from "./components/LineProgress";
-import LineProgress from "./components/LineProgress";
->>>>>>> 42576ef (beforerebase)
+import Main from "./main/Main";
 
 function App() {
   return (
+<<<<<<< HEAD
     <div className="m-auto max-h-[912px] max-w-[412px] bg-[#FBFBFB] border-2 border-black">
       <BrowserRouter>
+=======
+    <BrowserRouter>
+      <div className="m-auto min-h-screen max-w-[412px] bg-[#FBFBFB] border-2 border-black">
+>>>>>>> f57fc2e (feat:search페이지 구현)
         <Routes>
 <<<<<<< HEAD
           {/* 인증/회원가입 관련 */}
@@ -41,6 +48,7 @@ function App() {
           <Route path="/" element={<LandigPage />} />
           <Route path="signup/terms" element={<SignupTerms />} />
           <Route path="/main" element={<Main />} />
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 3539f33 (beforerebase)
           <Route path="/signup/email" element={<SignupEmail />} />
@@ -56,9 +64,12 @@ function App() {
 =======
           <Route path="/main/search" element={<SearchDetailModal />} />
 >>>>>>> 42576ef (beforerebase)
+=======
+          <Route path="/search" element={<Search />} />
+>>>>>>> f57fc2e (feat:search페이지 구현)
         </Routes>
-      </BrowserRouter>
-    </div>
+      </div>
+    </BrowserRouter>
   );
 }
 

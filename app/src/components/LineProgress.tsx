@@ -1,5 +1,5 @@
 import React from "react";
-import { lineStyleMap } from "../constants/LineStyleMap";
+import { lineStyleMap } from "../constants/lineStyleMap";
 
 interface Segment {
   lineName: string;
