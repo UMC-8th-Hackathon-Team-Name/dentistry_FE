@@ -4,6 +4,7 @@ import LandigPage from "./auth/LandingPage";
 import Terms from "./auth/Terms";
 import Main from "./main/Main";
 import SignupEmail from "./auth/SignupEmail";
+import SignupPassword from "./auth/SignupPassword";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/terms" element={<Terms />} />
           <Route path="/main" element={<Main />} />
           <Route path="/signup/email" element={<SignupEmail />} />
+          <Route path="/signup/password" element={<SignupPassword />} />
         </Routes>
       </div>
     </BrowserRouter>
