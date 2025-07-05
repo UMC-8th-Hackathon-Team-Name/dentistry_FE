@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import logo_icon from "/src/assets/dooroodooroo_icon.png";
 import logo_title from "/src/assets/dooroodooroo_title.png";
+import LoginButton from "../components/LoginButton";
 
 const LandigPage = () => {
   return (
@@ -26,9 +27,7 @@ const LandigPage = () => {
       </div>
       <div className="absolute flex flex-col gap-5 w-fit bottom-20">
         {/* 추후 버튼 컴포넌트로 교체 */}
-        <div className="flex items-center justify-center h-12 bg-white rounded-md w-80">
-          로그인 하기
-        </div>
+        <LoginButton />
         <Link
           to="/signup"
           role="signup"
