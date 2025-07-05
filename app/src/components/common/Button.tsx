@@ -9,7 +9,7 @@ const Button = ({
   text,
   onClick,
   type = "button",
-  disabled = true,
+  disabled = false,
 }: buttonProps) => {
   return (
     <button

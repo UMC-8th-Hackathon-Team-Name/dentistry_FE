@@ -29,8 +29,8 @@ const LandigPage = () => {
         {/* 추후 버튼 컴포넌트로 교체 */}
         <LoginButton />
         <Link
-          to="/signup"
-          role="signup"
+          to="/terms"
+          role="약관 동의 페이지로 이동"
           className="w-full text-base font-normal text-center text-white"
           onClick={() => {}}
         >
