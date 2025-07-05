@@ -3,6 +3,7 @@ import "./App.css";
 import LandigPage from "./auth/LandingPage";
 import Terms from "./auth/Terms";
 import Main from "./main/Main";
+import SignupEmail from "./auth/SignupEmail";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route path="/" element={<LandigPage />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/main" element={<Main />} />
+          <Route path="/signup/email" element={<SignupEmail />} />
         </Routes>
       </div>
     </BrowserRouter>
