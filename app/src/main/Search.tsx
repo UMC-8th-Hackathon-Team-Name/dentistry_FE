@@ -43,23 +43,22 @@ const Search = () => {
     : [];
 
   return (
-    <div className="relative flex flex-col items-center w-full h-screen gap-4">
-      <div className="w-full h-[60px] bg-[#465785]">
+    <div
+      className="relative flex flex-col items-center w-full h-screen gap-4"
+      role="main"
+    >
+      <div className="w-full h-[60px] bg-[#465785]" role="banner">
         <img
           src={closeIcon}
           alt="closeButton"
           className="absolute cursor-pointer top-[20px] left-[24px]"
           onClick={() => nav("/main")}
+          role="button"
         />
       </div>
 
-      <div className="flex items-center">
-        <img
-          role="바꾸기 버튼"
-          src={vector}
-          alt="바꾸기"
-          onClick={handleSwap}
-        />
+      <div className="flex items-center" role="group" aria-label="검색 입력창">
+        <img role="button" src={vector} alt="바꾸기" onClick={handleSwap} />
         <div className="flex flex-col gap-[8px]">
           <input
             value={start}
@@ -68,6 +67,8 @@ const Search = () => {
             type="text"
             placeholder="출발지 입력"
             className="w-[300px] h-[40px] rounded-[22px] mx-[11px] px-[19px] bg-[#F7F7F7] text-[16px] font-[300] text-[#888888]"
+            role="searchbox"
+            aria-label="출발지 입력"
           />
           <input
             value={end}
@@ -76,11 +77,16 @@ const Search = () => {
             type="text"
             placeholder="도착지 입력"
             className="w-[300px] h-[40px] rounded-[22px] mx-[11px] px-[19px] bg-[#F7F7F7] text-[16px] font-[300] text-[#888888]"
+            role="searchbox"
+            aria-label="도착지 입력"
           />
         </div>
       </div>
 
-      <div className="w-[380px] h-[670px] rounded-[19px] bg-[#FFF] overflow-y-auto scrollbar-hide">
+      <div
+        className="w-[380px] h-[670px] rounded-[19px] bg-[#FFF] overflow-y-auto scrollbar-hide"
+        role="list"
+      >
         {dummyResults.map((item, idx) => (
           <SearchResultItem
             key={idx}
@@ -94,7 +100,11 @@ const Search = () => {
       </div>
 
       {modalOpen && (
-        <div className="fixed inset-0 bg-black/30 z-50 flex items-center justify-center">
+        <div
+          className="fixed inset-0 bg-black/30 z-50 flex items-center justify-center"
+          role="dialog"
+          aria-modal="true"
+        >
           <SearchDetailModal />
         </div>
       )}

@@ -17,39 +17,66 @@ const SearchDetailModal = ({
     { lineName: "4", ratio: 3 },
     { lineName: "우이신설", ratio: 4 },
   ];
-  const facilityList = [
-    "수평 보행기",
-    "엘리베이터",
-    "경사로",
-    "음성유도기",
-    "에스컬레이터",
-    "휠체어 리프트",
-  ];
   return (
-    <div className="h-[579px] rounded-[19px] bg-[#FFFFFF] flex flex-col w-[380px]">
-      <div className="flex h-[84px] justify-between items-center border-b border-[#F2F2F2]">
-        <span className="text-[24px] text-[#4C4C4C] mx-[30px]">검색 결과</span>
+    <div
+      className="h-[579px] rounded-[19px] bg-[#FFFFFF] flex flex-col w-[380px]"
+      role="dialog"
+      aria-modal="true"
+      aria-label="검색 결과 상세 모달"
+    >
+      <div
+        className="flex h-[84px] justify-between items-center border-b border-[#F2F2F2]"
+        role="group"
+        aria-label="모달 헤더"
+      >
+        <span className="text-[24px] text-[#4C4C4C] mx-[30px]" role="heading">
+          검색 결과
+        </span>
         <img
           onClick={() => nav("/main2")}
           src={closeIcon}
           alt="닫기 버튼"
           className="h-[20px] w-[20px] mr-[30px]"
+          role="button"
         />
       </div>
-      <div className="flex gap-3 items-center justify-center mt-[32px] px-[26px]">
-        <span className="text-[#4C4C4C] text-[20px] font-[500]">9호선</span>
-        <div className="w-[150px] h-[0.75px] bg-[#D1D1D1]"></div>
-        <span className="text-[#4C4C4C] text-[20px] font-[500]">우이신설</span>
+      <div
+        className="flex gap-3 items-center justify-center mt-[32px] px-[26px]"
+        role="group"
+        aria-label="출발 호선과 도착 호선"
+      >
+        <span className="text-[#4C4C4C] text-[20px] font-[500]" role="text">
+          9호선
+        </span>
+        <div
+          className="w-[150px] h-[0.75px] bg-[#D1D1D1]"
+          role="separator"
+        ></div>
+        <span className="text-[#4C4C4C] text-[20px] font-[500]" role="text">
+          우이신설
+        </span>
       </div>
-      <div className="mt-[50px] mx-[26px]">
+      <div
+        className="mt-[50px] mx-[26px]"
+        role="region"
+        aria-label="노선 진행도"
+      >
         <LineProgress segments={segments} />
       </div>
-      <div className="mt-[30px] px-[26px] overflow-y-auto max-h-[250px] scrollbar-hide ">
+      <div
+        className="mt-[30px] px-[26px] overflow-y-auto max-h-[250px] scrollbar-hide"
+        role="region"
+        aria-label="편의시설 정보"
+      >
         <FacilityPath />
       </div>
       {showDetailButton && (
-        <div className="mt-[26px] flex justify-center">
-          <Button text="자세히 보기" onClick={() => nav("/map")} />
+        <div className="mt-[26px] flex justify-center" role="group">
+          <Button
+            text="자세히 보기"
+            onClick={() => nav("/map")}
+            role="button"
+          />
         </div>
       )}
     </div>

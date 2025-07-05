@@ -4,8 +4,9 @@ import { lineStyleMap } from "../constants/lineStyleMap";
 interface Segment {
   lineName: string;
   ratio: number;
-  textSize?: string; // ← (선택) 이 세그먼트만 글자 크기 덮어쓰기
+  textSize?: string;
 }
+
 interface LineProgressProps {
   segments: Segment[];
 }
@@ -18,7 +19,6 @@ const LineProgress: React.FC<LineProgressProps> = ({ segments }) => {
 
   const fallback = { color: "#999", textSize: "12px" };
 
-  // Circle 공통
   const Circle = ({
     color,
     textSize,
@@ -36,14 +36,19 @@ const LineProgress: React.FC<LineProgressProps> = ({ segments }) => {
         backgroundColor: color,
         fontSize: textSize,
       }}
+      role="img"
+      aria-label={`${label} 호선`}
     >
       {label}
     </div>
   );
 
   return (
-    <div className="w-full max-w-[640px] mx-auto flex items-center">
-      {/* ● 출발역 */}
+    <div
+      className="w-full max-w-[640px] mx-auto flex items-center"
+      role="progressbar"
+      aria-label="노선 경로 진행"
+    >
       {(() => {
         const seg = segments[0];
         const base = lineStyleMap[seg.lineName] ?? fallback;
@@ -54,10 +59,11 @@ const LineProgress: React.FC<LineProgressProps> = ({ segments }) => {
         );
       })()}
 
-      {/* ─ Bar 묶음 */}
       <div
         className="flex flex-grow items-center"
         style={{ marginLeft: -CIRCLE / 2, marginRight: -CIRCLE / 2 }}
+        role="group"
+        aria-label="노선 진행 바"
       >
         {segments.map((seg, idx) => {
           const base = lineStyleMap[seg.lineName] ?? fallback;
@@ -77,12 +83,12 @@ const LineProgress: React.FC<LineProgressProps> = ({ segments }) => {
                 flexGrow: seg.ratio,
                 backgroundColor: color,
               }}
+              role="presentation"
             />
           );
         })}
       </div>
 
-      {/* ● 도착역 */}
       {(() => {
         const seg = segments[segments.length - 1];
         const base = lineStyleMap[seg.lineName] ?? fallback;
