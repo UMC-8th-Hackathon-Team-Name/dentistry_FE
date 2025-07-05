@@ -6,17 +6,13 @@ import closeIcon from "/src/assets/close_icon.png";
 import Button from "../components/common/Button";
 import ProgressBar from "../components/common/ProgressBar";
 
-const mockData = [
-  {
-    email: "test@test.com",
-  },
-];
+const mockData = [{ email: "test@test.com" }];
 
 const SignupEmail = () => {
   const nav = useNavigate();
   const [email, setEmail] = useState("");
-  const [isValid, setIsValid] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const onClickNext = () => {
     setIsSubmitted(true);
@@ -25,12 +21,14 @@ const SignupEmail = () => {
     const isFormatValid = emailRegex.test(email);
     const isDuplicate = mockData.some((item) => item.email === email);
 
-    const valid = isFormatValid && isDuplicate;
-    setIsValid(valid);
-
-    if (valid) {
-      nav("/signup/password");
+    if (!isFormatValid || !isDuplicate) {
+      setErrorMessage("유효하지 않은 이메일이거나 이미 사용 중입니다.");
+      return;
     }
+
+    // 유효할 경우
+    setErrorMessage("");
+    nav("/signup/password");
   };
 
   return (
@@ -41,9 +39,7 @@ const SignupEmail = () => {
           src={closeIcon}
           alt="closeButton"
           className="absolute w-6 h-6 cursor-pointer top-6 left-6"
-          onClick={() => {
-            nav("/");
-          }}
+          onClick={() => nav("/")}
         />
       </div>
 
@@ -67,16 +63,18 @@ const SignupEmail = () => {
             placeholder="이메일을 입력해주세요"
             className="w-[325px] h-14 bg-[#FBFBFB] rounded-2xl px-5"
           />
+
           <Button
             disabled={email === ""}
-            text={"다음"}
-            type={"button"}
+            text="다음"
+            type="button"
             onClick={onClickNext}
           />
 
-          {isSubmitted && email.length > 0 && !isValid && (
+          {/* 에러 메시지 */}
+          {isSubmitted && errorMessage && (
             <div className="px-2 -mt-4 text-sm font-bold text-red-600">
-              유효하지 않은 이메일이거나 이미 사용 중입니다.
+              {errorMessage}
             </div>
           )}
         </div>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import closeIcon from "/src/assets/close_icon.png";
@@ -6,18 +6,14 @@ import closeIcon from "/src/assets/close_icon.png";
 import Button from "../components/common/Button";
 import ProgressBar from "../components/common/ProgressBar";
 
-const mockData = [
-  {
-    pass: "!12345678",
-  },
-];
+const mockData = [{ pass: "!12345678" }];
 
 const SignupPassword = () => {
   const nav = useNavigate();
   const [password, setPassword] = useState("");
   const [passwordCheck, setPasswordCheck] = useState("");
-  const [isValid, setIsValid] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const onClickNext = () => {
     setIsSubmitted(true);
@@ -27,8 +23,15 @@ const SignupPassword = () => {
     const isMatch = password === passwordCheck;
     const isAuthorized = mockData.some((item) => item.pass === password);
 
-    if (isPasswordValid && isMatch && isAuthorized) {
-      nav("/signup/complete"); // 다음 단계로 이동
+    if (!isMatch) {
+      setErrorMessage("비밀번호가 일치하지 않습니다!");
+    } else if (!isAuthorized) {
+      setErrorMessage("등록된 비밀번호가 아닙니다.");
+    } else if (!isPasswordValid) {
+      setErrorMessage("비밀번호는 특수문자를 포함한 8자 이상이어야 합니다.");
+    } else {
+      setErrorMessage(""); // 에러 없을 때
+      nav("/signup/complete");
     }
   };
 
@@ -40,9 +43,7 @@ const SignupPassword = () => {
           src={closeIcon}
           alt="closeButton"
           className="absolute w-6 h-6 cursor-pointer top-6 left-6"
-          onClick={() => {
-            nav("/signup/complete");
-          }}
+          onClick={() => nav("/signup/complete")}
         />
       </div>
 
@@ -62,9 +63,8 @@ const SignupPassword = () => {
           <input
             type="password"
             value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
+            onChange={(e) => setPassword(e.target.value)}
+            maxLength={20}
             placeholder="비밀번호를 입력해주세요"
             className="w-[325px] h-14 bg-[#FBFBFB] rounded-2xl px-5"
           />
@@ -72,36 +72,21 @@ const SignupPassword = () => {
           <input
             type="password"
             value={passwordCheck}
-            onChange={(e) => {
-              setPasswordCheck(e.target.value);
-            }}
+            onChange={(e) => setPasswordCheck(e.target.value)}
             placeholder="비밀번호를 확인하세요"
             className="w-[325px] h-14 bg-[#FBFBFB] rounded-2xl px-5"
           />
           <Button
-            // disabled={!isValid}
+            disabled={password === "" || passwordCheck === ""}
             text={"다음"}
             type={"button"}
-            onClick={() => {
-              onClickNext();
-            }}
+            onClick={onClickNext}
           />
-          {isSubmitted && (
-            <>
-              {password !== passwordCheck ? (
-                <div className="px-2 -mt-4 text-sm font-bold text-red-600">
-                  비밀번호가 일치하지 않습니다!
-                </div>
-              ) : !mockData.some((item) => item.pass === password) ? (
-                <div className="px-2 -mt-4 text-sm font-bold text-red-600">
-                  등록된 비밀번호가 아닙니다.
-                </div>
-              ) : password.length > 0 && !isValid ? (
-                <div className="px-2 -mt-4 text-sm font-bold text-red-600">
-                  유효하지 않은 이메일이거나 이미 사용 중입니다.
-                </div>
-              ) : null}
-            </>
+
+          {isSubmitted && errorMessage && (
+            <div className="px-2 -mt-4 text-sm font-bold text-red-600">
+              {errorMessage}
+            </div>
           )}
         </div>
       </div>
