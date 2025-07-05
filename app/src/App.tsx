@@ -1,5 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1cdb3c74c49a5ce4aac4a89e1a210eb6b0733963
 // auth
 import LandingPage from "./auth/LandingPage";
 import SignupEmail from "./auth/SignupEmail";
@@ -13,6 +17,10 @@ import DeleteAccount from "./auth/DeleteAccount";
 import DetailPage from "./pages/DetailPage";
 import SettingPage from "./pages/SettingPage";
 import FixPage from "./pages/FixPage";
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1cdb3c74c49a5ce4aac4a89e1a210eb6b0733963
 import SignupTerms from "./auth/SignupTerms";
 
 import Search from "./main/Search";
@@ -30,10 +38,13 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup/terms" element={<SignupTerms />} />
+<<<<<<< HEAD
           <Route path="/" element={<LandingPage />} />
           <Route path="signup/terms" element={<SignupTerms />} />
           <Route path="/main" element={<Main />} />
           <Route path="signup/terms" element={<SignupTerms />} />
+=======
+>>>>>>> 1cdb3c74c49a5ce4aac4a89e1a210eb6b0733963
           <Route path="/signup/email" element={<SignupEmail />} />
           <Route path="/signup/password" element={<SignupPassword />} />
           <Route path="/signup/complete" element={<SignupComplete />} />
@@ -46,7 +57,7 @@ function App() {
           <Route path="/search" element={<Search />} />
           <Route path="/main/search" element={<Search />} />
           <Route path="/search" element={<Search />} />
-          f57fc2e (feat:search페이지 구현)
+
           <Route path="/detail" element={<DetailPage />} />
           <Route path="/setting" element={<SettingPage />} />
           <Route path="/fix" element={<FixPage />} />
