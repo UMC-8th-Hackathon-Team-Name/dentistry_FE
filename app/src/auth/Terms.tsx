@@ -4,6 +4,10 @@ import Button from "../components/common/Button";
 import closeIcon from "/src/assets/close_icon.png";
 import checkIcon from "/src/assets/check_icon.png";
 
+const mockData = {
+  email: "test@test.com",
+};
+
 const Terms = () => {
   const nav = useNavigate();
   const [isFullChecked, setIsFullChecked] = useState(false);
@@ -42,7 +46,7 @@ const Terms = () => {
       </div>
 
       {/* 약관  */}
-      <div className="flex flex-col w-full gap-2 px-7 ">
+      <div className="flex flex-col w-full gap-2 px-10">
         <div className="text-2xl font-semibold text-[#4C4C4C]">약관 동의</div>
         <div className="text-base font-normal text-[#4C4C4C]">
           서비스 이용을 위해 약관 동의가 필요합니다
@@ -50,7 +54,7 @@ const Terms = () => {
       </div>
 
       {/* 약관 동의 Container */}
-      <div className="w-96 h-[630px] bg-white rounded-md flex flex-col justify-between items-center pt-12 pb-20 px-7">
+      <div className="w-96 h-[630px] bg-white rounded-2xl flex flex-col justify-between items-center pt-12 pb-20 px-7 shadow-[0_-2px_15px_rgba(0,0,0,0.1)]">
         <div className="flex flex-col gap-8">
           {/* 모두 동의 */}
           <div className="flex gap-5">
@@ -157,11 +161,11 @@ const Terms = () => {
           </div>
         </div>
         <Button
-          disabled={isAllRequiredChecked}
+          disabled={!isAllRequiredChecked}
           text={"동의하고 가입하기"}
           type={"button"}
           onClick={() => {
-            nav("/signup");
+            nav("/signup/email");
           }}
         />
       </div>

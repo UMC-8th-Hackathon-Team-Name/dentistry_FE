@@ -5,18 +5,14 @@ interface buttonProps {
   disabled?: boolean;
 }
 
-const Button = ({
-  text,
-  onClick,
-  type = "button",
-  disabled = false,
-}: buttonProps) => {
+const Button = ({ text, onClick, type = "button", disabled }: buttonProps) => {
   return (
     <button
       role="버튼"
       type={type}
       onClick={onClick}
-      className={`w-[325px] h-[52px] rounded-[10px] text-[20px] text-[#FFFFFF] ${disabled ? "bg-[#465785]" : "bg-[#D1D1D1]"}
+      disabled={disabled}
+      className={`w-[325px] h-[52px] rounded-[10px] text-[20px] text-[#FFFFFF] ${!disabled ? "bg-[#465785]" : "bg-[#D1D1D1]"}
 `}
     >
       {text}
