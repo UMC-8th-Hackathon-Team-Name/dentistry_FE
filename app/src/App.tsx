@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import LandigPage from "./auth/LandingPage";
 import Terms from "./auth/Terms";
+import Main from "./main/Main";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandigPage />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/main" element={<Main />} />
         </Routes>
       </div>
     </BrowserRouter>
