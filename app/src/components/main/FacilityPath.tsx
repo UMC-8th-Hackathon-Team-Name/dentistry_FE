@@ -48,9 +48,9 @@ const FacilityPath = () => (
         return (
           <div key={item.stationName} className="flex">
             {/* ─── 왼쪽: 노선 원 ─── */}
-            <div className="w-8 mr-4 flex justify-center">
+            <div className="flex justify-center w-8 mr-4">
               <div
-                className="w-6 h-6 rounded-full text-white font-bold flex items-center justify-center"
+                className="flex items-center justify-center w-6 h-6 font-bold text-white rounded-full"
                 style={{
                   backgroundColor: style.color,
                   fontSize: style.textSize,
