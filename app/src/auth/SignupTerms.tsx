@@ -82,6 +82,7 @@ const SignupTerms = () => {
 
           {/* 구분선 */}
           <div className="border-[1px] border-[#BCBCBC] h-[1px] w-full"></div>
+
           <div className="flex flex-col gap-5 flex-2">
             {/* 서비스 이용약관 동의 */}
             <div className="flex items-center w-full gap-5">
