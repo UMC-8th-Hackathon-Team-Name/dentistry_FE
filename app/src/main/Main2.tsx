@@ -1,10 +1,7 @@
-import Button from "../components/common/Button";
 import logo_icon from "/src/assets/dooroodooroo_icon.png";
 import logo_title from "/src/assets/dooroodooroo_title.png";
-import vector from "/src/assets/Vector.svg";
 import arrow from "/src/assets/arrow.svg";
 import { useNavigate } from "react-router-dom";
-import SearchDetailModal from "./SearchDetailModal";
 import SearchDetail from "./SearchDetail";
 
 const Main2 = () => {
